@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=Docker_123
+      - POSTGRES_DB=my_db
+
+
+  django-backend-record-service:
+    build: ./backend_record/
+    volumes:
+      - ./backend_record:/usr/src/app
+    ports:
+      - 8001:8001
+    command: python manage.py runserver 0.0.0.0:8001
+    depends_on:
+      - db
+
+
+  django-record-weather-service:
+    build: ./backend_weather/
+    volumes:
+      - ./backend_weather:/usr/src/app
+    ports:
+      - 8000:8000
+    command: python manage.py runserver 0.0.0.0:8000
+
+
+  react:
+    restart: always
+    command : npm start
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile
+    tty: true
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    depends_on:
+      - django-backend-record-service
+      - django-record-weather-service
+    # networks:
+    #   - db-net
