@@ -10,7 +10,7 @@ papersize: a4
 #     - heightrounded
 documentclass: article
 title: Distributed Programming report
-author: LAI Khang Duy - Lylia SOMETHINGHERE
+author: LAI Khang Duy - Lylia DJALI
 date: 29-01-2022
 titlepage: true
 toc-own-page: true
@@ -28,10 +28,10 @@ Please find the link here
 
 - [LAI KHANG DUY](https://www.qwiklabs.com/public_profiles/b3802779-0893-4f19-a16a-f7e5309c3219)
 
-- [LYLIA](link)
+- [LYLIA DJALI](https://www.qwiklabs.com/public_profiles/d8f6c6b9-ecc2-44ae-8bda-78e65fc5874b)
 
-# Resource
-Please find the source code of the project here. 
+# Ressources
+Le code source est disponible dans le lien ci-dessous. 
 
 [**CLICK HERE**](https://github.com/laiduy98/project_programation_distribuee)
 
